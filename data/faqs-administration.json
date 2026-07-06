@@ -1,0 +1,250 @@
+[
+  {
+    "id": 1,
+    "question": "Who is the Chairman of the Governing Council at GBPIET?",
+    "answer": "The Chairman of the Governing Council at GBPIET is Prof B. S. Bisht, Educationist, nominated by the State Government.",
+    "category": "governing_council",
+    "tags": ["chairman"],
+    "lang": "en"
+  },
+  {
+    "id": 2,
+    "question": "Who is the Member Secretary of the Governing Council at GBPIET?",
+    "answer": "The Member Secretary of the Governing Council at GBPIET is Prof. Vijay Kumar Banga, Director, GBPIET, Pauri Garhwal.",
+    "category": "governing_council",
+    "tags": ["member secretary"],
+    "lang": "en"
+  },
+  {
+    "id": 3,
+    "question": "Who are the members of the Governing Council at GBPIET?",
+    "answer": "The members of the Governing Council at GBPIET include Prof B. S. Bisht, Principal Secretary Technical Education, Director Technical Education, Vice Chancellor UTU Dehradun, Shri Pankaj Gupta, Prof. M. Y. Shah, Prof. M. P. Singh, Prof. S. P. Singh, Prof. A. K. Ahuja, Secretary Finance Uttarakhand Govt, Prof. M. K. Panda, Prof. Ashutosh Gupta, Dr. Yatendra Kumar, and Prof. Vijay Kumar Banga.",
+    "category": "governing_council",
+    "tags": ["members"],
+    "lang": "en"
+  },
+  {
+    "id": 4,
+    "question": "Who is Prof. Vijay Kumar Banga in GBPIET Governing Council?",
+    "answer": "Prof. Vijay Kumar Banga is the Member Secretary of the Governing Council and Director of GBPIET, Pauri Garhwal.",
+    "category": "governing_council",
+    "tags": ["member secretary", "director"],
+    "lang": "en"
+  },
+  {
+    "id": 5,
+    "question": "Who is Prof B. S. Bisht in GBPIET Governing Council?",
+    "answer": "Prof B. S. Bisht is the Chairman of the Governing Council at GBPIET.",
+    "category": "governing_council",
+    "tags": ["chairman"],
+    "lang": "en"
+  },
+  {
+    "id": 6,
+    "question": "Who is Shri Pankaj Gupta in GBPIET Governing Council?",
+    "answer": "Shri Pankaj Gupta is a member of the Governing Council at GBPIET, serving as an Industrialist.",
+    "category": "governing_council",
+    "tags": ["member"],
+    "lang": "en"
+  },
+  {
+    "id": 7,
+    "question": "Who is the Chairman of the Board of Governors at GBPIET?",
+    "answer": "The Chairman of the Board of Governors at GBPIET is Dr. Dhan Singh Rawat, Minister of Technical Education, Uttarakhand.",
+    "category": "board_of_governors",
+    "tags": ["chairman"],
+    "lang": "en"
+  },
+  {
+    "id": 8,
+    "question": "Who is the Vice Chairman of the Board of Governors at GBPIET?",
+    "answer": "The Vice Chairman is Dr. Ranjit Kumar Sinha (IAS), Principal Secretary Technical Education.",
+    "category": "board_of_governors",
+    "tags": ["vice chairman"],
+    "lang": "en"
+  },
+  {
+    "id": 9,
+    "question": "Who is the Member Secretary of the Board of Governors at GBPIET?",
+    "answer": "The Member Secretary is Prof. Vijay Kumar Banga, Director GBPIET.",
+    "category": "board_of_governors",
+    "tags": ["member secretary"],
+    "lang": "en"
+  },
+  {
+    "id": 10,
+    "question": "Who are the members of the Board of Governors at GBPIET?",
+    "answer": "Members include Shri Subodh Uniyal, Dr. Ranjit Kumar Sinha, Shri R. P. Gupta, Prof. Onkar Singh, Prof. Y. N. Singh, Shri Pankaj Gupta, Shri Sanjay Singh Tolia, Prof. K. K. S. Mer, and Prof. Vijay Kumar Banga.",
+    "category": "board_of_governors",
+    "tags": ["members"],
+    "lang": "en"
+  },
+  {
+    "id": 11,
+    "question": "Who are the Deans at GBPIET?",
+    "answer": "The Deans are Prof. Vijay Kumar Banga, Prof. Ashutosh Gupta, Prof. Mamta Baunthiyal, Prof. H. Goel, and Dr. Amit Joshi.",
+    "category": "academics",
+    "tags": ["deans"],
+    "lang": "en"
+  },
+  {
+    "id": 12,
+    "question": "Who is the Dean of Academics at GBPIET?",
+    "answer": "The Dean (Academics) is Prof. Ashutosh Gupta.",
+    "category": "academics",
+    "tags": ["academics"],
+    "lang": "en"
+  },
+  {
+    "id": 13,
+    "question": "Who is the Dean of Research and Development at GBPIET?",
+    "answer": "The Dean (R&D) is Prof. Mamta Baunthiyal.",
+    "category": "academics",
+    "tags": ["research"],
+    "lang": "en"
+  },
+  {
+    "id": 14,
+    "question": "Who is the Dean of Student Welfare at GBPIET?",
+    "answer": "The Dean (Student Welfare) is Prof. H. Goel.",
+    "category": "academics",
+    "tags": ["student welfare"],
+    "lang": "en"
+  },
+  {
+    "id": 15,
+    "question": "Who is the Dean of PG at GBPIET?",
+    "answer": "The Dean (PG) is Dr. Amit Joshi.",
+    "category": "academics",
+    "tags": ["pg"],
+    "lang": "en"
+  },
+  {
+    "id": 16,
+    "question": "Who are the Deputy Deans at GBPIET?",
+    "answer": "Deputy Deans include Dr. P. K. Pant, Dr. S. S. Samant, Dr. Y. S. Chauhan, Dr. Manoj Kumar, Dr. Sunil Chamoli, Mr. Ramesh Kumar, and Mr. Satyaveer Singh Rawat.",
+    "category": "academics",
+    "tags": ["deputy dean"],
+    "lang": "en"
+  },
+  {
+    "id": 17,
+    "question": "Who is the Registrar at GBPIET?",
+    "answer": "The Registrar at GBPIET is Mr. Sandeep Kumar.",
+    "category": "administration",
+    "tags": ["registrar"],
+    "lang": "en"
+  },
+  {
+    "id": 18,
+    "question": "Who is the Head of Training And Placement at GBPIET?",
+    "answer": "The Head of Training and Placement is Dr. Kamaljit Singh Bhatia.",
+    "category": "placement",
+    "tags": ["placement"],
+    "lang": "en"
+  },
+  {
+    "id": 19,
+    "question": "Who are the Deputy Deans of PG at GBPIET?",
+    "answer": "The Deputy Deans (PG) are Mr. Ramesh Kumar and Mr. Satyaveer Singh Rawat.",
+    "category": "academics",
+    "tags": ["pg"],
+    "lang": "en"
+  },
+  {
+    "id": 20,
+    "question": "List all Deans at GBPIET with their departments",
+    "answer": "Prof. Vijay Kumar Banga - Administration, Prof. Ashutosh Gupta - Academics, Prof. Mamta Baunthiyal - R&D, Prof. H. Goel - Student Welfare, Dr. Amit Joshi - PG.",
+    "category": "academics",
+    "tags": ["deans"],
+    "lang": "en"
+  },
+  {
+    "id":21,
+    "question": "Who is the current Vice-Chancellor of Veer Madho Singh Bhandari Uttarakhand Technical University?",
+    "answer": "Dr. Tripta Thakur is the current Vice-Chancellor of Veer Madho Singh Bhandari Uttarakhand Technical University (UTU), Dehradun.",
+    "category": "administration",
+    "tags": ["vice chancellor", "utu", "dr tripta thakur"],
+    "lang": "en"
+    },
+  {
+    "id": 1,
+    "question": "List all Deans at GBPIET",
+    "answer": "Deans at GBPIET: 1. Dean (Administration & Faculty Affairs): Prof. Vijay Kumar Banga — director@gbpiet.ac.in — 01368-228030 2. Dean (Planning and Development): Prof. K. K. S. Mer — kks_mer@yahoo.com — 9412957015 3. Dean (Academics): Prof. Ashutosh Gupta — ashuaec72@yahoo.com — 9412500990 4. Dean (Research and Development): Prof. Mamta Baunthiyal — mamtabaunthiyal@yahoo.co.in — 8006913000 5. Dean (Student Welfare): Prof. H. Goel — dsw@gbpiet.ac.in — 8755068959 6. Dean Alumni: Dr. Sanjeev Naithani — naithani.iitk@gmail.com — 9410563544 Associate Deans: 1. Associate Dean (Student Welfare): Dr. P. K. Pant — pawanpant@gmail.com — 9557002032 2. Associate Dean (Research and Development): Dr. Suresh Chandra Phulara — phulara.biotech@gmail.com — 9589104247",
+    "category": "administration",
+    "tags": ["deans", "faculty", "administration"],
+    "lang": "en"
+  },
+  {
+    "id": 2,
+    "question": "Who is the Dean of Administration and Faculty Affairs at GBPIET?",
+    "answer": "The Dean (Administration & Faculty Affairs) at GBPIET is Prof. Vijay Kumar Banga. Email: director@gbpiet.ac.in, Phone: 01368-228030, Fax: 01368-228062.",
+    "category": "administration",
+    "tags": ["dean", "administration", "faculty affairs"],
+    "lang": "en"
+  },
+  {
+    "id": 3,
+    "question": "dean administration faculty affairs",
+    "answer": "The Dean (Administration & Faculty Affairs) at GBPIET is Prof. Vijay Kumar Banga. Email: director@gbpiet.ac.in, Phone: 01368-228030.",
+    "category": "administration",
+    "tags": ["dean", "administration"],
+    "lang": "en"
+  },
+  {
+    "id": 4,
+    "question": "Who is the Dean of Planning and Development at GBPIET?",
+    "answer": "The Dean (Planning and Development) at GBPIET is Prof. K. K. S. Mer. Email: kks_mer@yahoo.com, Phone: 9412957015, Fax: 01368-228062.",
+    "category": "administration",
+    "tags": ["planning", "development", "dean"],
+    "lang": "en"
+  },
+  {
+    "id": 5,
+    "question": "dean planning development",
+    "answer": "The Dean (Planning and Development) at GBPIET is Prof. K. K. S. Mer. Phone: 9412957015.",
+    "category": "administration",
+    "tags": ["planning", "development"],
+    "lang": "en"
+  },
+  {
+    "id": 6,
+    "question": "Who is the Dean of Academics at GBPIET?",
+    "answer": "The Dean (Academics) at GBPIET is Prof. Ashutosh Gupta. Email: ashuaec72@yahoo.com, Phone: 9412500990, Fax: 01368-228062.",
+    "category": "academics",
+    "tags": ["academics", "dean"],
+    "lang": "en"
+  },
+  {
+    "id": 7,
+    "question": "dean academics",
+    "answer": "The Dean (Academics) at GBPIET is Prof. Ashutosh Gupta. Phone: 9412500990.",
+    "category": "academics",
+    "tags": ["academics", "dean"],
+    "lang": "en"
+  },
+  {
+    "id": 8,
+    "question": "Who is the Dean of Research and Development at GBPIET?",
+    "answer": "The Dean (Research and Development) at GBPIET is Prof. Mamta Baunthiyal. Email: mamtabaunthiyal@yahoo.co.in, Phone: 8006913000, Fax: 01368-228062.",
+    "category": "research",
+    "tags": ["research", "development", "dean"],
+    "lang": "en"
+  },
+  {
+    "id": 9,
+    "question": "dean research development",
+    "answer": "The Dean (Research and Development) at GBPIET is Prof. Mamta Baunthiyal. Phone: 8006913000.",
+    "category": "research",
+    "tags": ["research", "development"],
+    "lang": "en"
+  },
+  {
+    "id": 10,
+    "question": "Who is the Dean of Student Welfare at GBPIET?",
+    "answer": "The Dean (Student Welfare) at GBPIET is Prof. H. Goel. Email: dsw@gbpiet.ac.in, Phone: 8755068959, Fax: 01368-228062.",
+    "category": "student welfare",
+    "tags": ["student welfare", "dean"],
+    "lang": "en"
+  }
+]
