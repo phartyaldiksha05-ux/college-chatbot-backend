@@ -27,16 +27,8 @@ _scheduler = None
 
 def index_website_chunks(chunks: list[dict]) -> int:
     try:
-        # ✅ Use try/except for both import styles
-        try:
-            from qdrant_db.qdrant_setup import get_client
-        except ImportError:
-            from backend.qdrant_db.qdrant_setup import get_client
-
-        try:
-            from rag.embeddings import embed_texts
-        except ImportError:
-            from backend.rag.embeddings import embed_texts
+        from qdrant_setup import get_client
+        from rag.embeddings import embed_texts
 
         from qdrant_client.models import PointStruct
         import uuid
