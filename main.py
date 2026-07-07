@@ -270,6 +270,10 @@ async def options_handler(full_path: str, request: Request):
 def robots_txt():
     return "User-agent: *\nDisallow: /admin/\nAllow: /"
 
+@app.get("/favicon.ico")
+async def favicon():
+    return Response(status_code=204)
+
 
 @app.get("/")
 def home():
@@ -283,10 +287,10 @@ def home():
     }
 
 
-@app.get("/health")
+@app.api_route("/health", methods=["GET", "HEAD"])
 async def health_check():
     return {
-        "status":  "ok",
+        "status": "ok",
         "chatbot": "Diksha",
         "version": "2.0.0",
         "groq_keys": {
@@ -295,11 +299,12 @@ async def health_check():
             "key3": bool(os.getenv("GROQ_API_KEY_3")),
             "key4": bool(os.getenv("GROQ_API_KEY_4")),
         },
-        "gemini":  bool(os.getenv("GEMINI_API_KEY")),
+        "gemini": bool(os.getenv("GEMINI_API_KEY")),
         "serpapi": bool(os.getenv("SERPAPI_KEY")),
-        "db":      "PostgreSQL" if USE_POSTGRES else "SQLite",
-        "qdrant":  "Cloud" if os.getenv("QDRANT_URL") else "Local",
+        "db": "PostgreSQL" if USE_POSTGRES else "SQLite",
+        "qdrant": "Cloud" if os.getenv("QDRANT_URL") else "Local",
     }
+    
 
 
 @app.post("/chat", response_model=ChatResponse)
