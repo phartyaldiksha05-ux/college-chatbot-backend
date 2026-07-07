@@ -338,6 +338,7 @@ def crawl_website(
     if not serpapi_key:
         print("[Crawler] ❌ SERPAPI_KEY not set — skipping")
         return []
+    print(f"[Crawler] SERPAPI_KEY present: {bool(serpapi_key)}")
     
     for query in QUERIES:
         try:
@@ -382,6 +383,7 @@ def crawl_website(
             continue
     
     print(f"[Crawler] ✅ SerpAPI: {len(pages)} snippets collected")
+    print(f"[Crawler] Total pages collected: {len(pages)}")
     return pages
 
 if __name__ == "__main__":
