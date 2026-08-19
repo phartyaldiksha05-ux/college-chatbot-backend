@@ -209,7 +209,7 @@ def groq_call(messages, max_tokens=500, temperature=0.3) -> str:
                 f"{m['role'].upper()}: {m['content']}" for m in messages
             )
             r = _gemini_client.models.generate_content(
-                model="gemini-2.0-flash",
+                model="gemini-2.5-flash",
                 contents=prompt_text,
                 config=genai_types.GenerateContentConfig(
                     max_output_tokens=max_tokens,
@@ -390,7 +390,13 @@ def is_out_of_scope(question: str) -> bool:
         temperature=0.0,
     )
 
-    is_oos = "YES" not in result.upper()
+    # ✅ YE LINE ADD KARO — <think> tags strip karo
+    import re as _re
+    result = _re.sub(r'<think>.*?</think>', '', result, flags=_re.DOTALL).strip()
+
+    
+
+    is_oos = "YES" not in result_clean.upper()
     _scope_cache[q] = is_oos
 
     label = "OUT OF SCOPE" if is_oos else "IN SCOPE"
