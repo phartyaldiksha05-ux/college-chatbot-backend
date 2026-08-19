@@ -4,6 +4,7 @@ import glob
 import re
 import asyncio
 import unicodedata
+from unittest import result
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -390,9 +391,13 @@ def is_out_of_scope(question: str) -> bool:
         temperature=0.0,
     )
 
-    # ✅ YE LINE ADD KARO — <think> tags strip karo
-    import re as _re
-    result_clean = _re.sub(r'<think>.*?</think>', '', result, flags=_re.DOTALL).strip()
+    if '<think>' in result.lower():
+        lines = [l.strip() for l in result.strip().splitlines() if l.strip()]
+        result_clean = lines[-1] if lines else result
+    else:
+        result_clean = result.strip()
+
+    # ✅ YE LINE ADD KARO — bilkul yahan
     is_oos = "YES" not in result_clean.upper()
 
     _scope_cache[q] = is_oos
