@@ -64,8 +64,9 @@ def _init_groq_clients():
     print("[GROQ] ✅ All clients initialized")
 
 
-GROQ_PRIMARY  = "openai/gpt-oss-120b"
-GROQ_FALLBACK = "qwen-qwq-32b"
+GROQ_PRIMARY  = "openai/gpt-oss-120b"   # ✅ same rakho
+GROQ_FALLBACK = "qwen/qwen3.6-27b"      # ✅ latest Qwen
+LIGHT_MODEL   = "openai/gpt-oss-20b"    # ✅ fastest replacement
 
 def _get_groq_attempts():
     """Attempts list dynamically banao taaki lazy init kaam kare."""
