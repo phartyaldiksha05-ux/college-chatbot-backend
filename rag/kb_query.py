@@ -392,15 +392,13 @@ def is_out_of_scope(question: str) -> bool:
 
     # ✅ YE LINE ADD KARO — <think> tags strip karo
     import re as _re
-    result = _re.sub(r'<think>.*?</think>', '', result, flags=_re.DOTALL).strip()
-
-    
-
+    result_clean = _re.sub(r'<think>.*?</think>', '', result, flags=_re.DOTALL).strip()
     is_oos = "YES" not in result_clean.upper()
+
     _scope_cache[q] = is_oos
 
     label = "OUT OF SCOPE" if is_oos else "IN SCOPE"
-    print(f"[SCOPE] LLM says {label}: '{question}' → '{result}'")
+    print(f"[SCOPE] LLM says {label}: '{question}' → '{result_clean}'")
     return is_oos
 
 
