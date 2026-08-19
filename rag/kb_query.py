@@ -65,7 +65,7 @@ def _init_groq_clients():
 
 
 GROQ_PRIMARY  = "openai/gpt-oss-120b"
-GROQ_FALLBACK = "qwen/qwen3-32b"
+GROQ_FALLBACK = "qwen-qwq-32b"
 
 def _get_groq_attempts():
     """Attempts list dynamically banao taaki lazy init kaam kare."""

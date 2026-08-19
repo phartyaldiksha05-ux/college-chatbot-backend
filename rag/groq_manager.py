@@ -21,7 +21,7 @@ load_dotenv()
 # CONFIG
 # ══════════════════════════════════════════════════════════════════════
 PRIMARY_MODEL  = "openai/gpt-oss-120b"
-FALLBACK_MODEL = "qwen/qwen3-32b"
+FALLBACK_MODEL = "qwen-qwq-32b"
 LIGHT_MODEL    = "llama-3.1-8b-instant"        # fastest, used if others fail
 TIMEOUT        = 30                       # seconds per request
 CACHE_TTL      = 3600                     # cache responses for 1 hour (seconds)
