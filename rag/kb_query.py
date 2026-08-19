@@ -64,8 +64,8 @@ def _init_groq_clients():
     print("[GROQ] ✅ All clients initialized")
 
 
-GROQ_PRIMARY  = "llama-3.3-70b-versatile"
-GROQ_FALLBACK = "llama3-70b-8192"
+GROQ_PRIMARY  = "openai/gpt-oss-120b"
+GROQ_FALLBACK = "qwen/qwen3-32b"
 
 def _get_groq_attempts():
     """Attempts list dynamically banao taaki lazy init kaam kare."""
