@@ -4,7 +4,6 @@ import glob
 import re
 import asyncio
 import unicodedata
-from unittest import result
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -65,9 +64,9 @@ def _init_groq_clients():
     print("[GROQ] ✅ All clients initialized")
 
 
-GROQ_PRIMARY  = "openai/gpt-oss-120b"   # ✅ same rakho
-GROQ_FALLBACK = "qwen/qwen3.6-27b"      # ✅ latest Qwen
-LIGHT_MODEL   = "openai/gpt-oss-20b"    # ✅ fastest replacement
+GROQ_PRIMARY  = "openai/gpt-oss-120b"
+GROQ_FALLBACK = "openai/gpt-oss-20b"
+GROQ_LIGHT    = "llama-3.1-8b-instant"   # fast, non-reasoning — for simple YES/NO classification
 
 def _get_groq_attempts():
     """Attempts list dynamically banao taaki lazy init kaam kare."""
@@ -81,6 +80,17 @@ def _get_groq_attempts():
         (_groq2, GROQ_FALLBACK, "Key2/Fallback"),
         (_groq3, GROQ_FALLBACK, "Key3/Fallback"),
         (_groq4, GROQ_FALLBACK, "Key4/Fallback"),
+    ]
+
+
+def _get_groq_light_attempts():
+    """Fast non-reasoning model attempts — for quick classification tasks."""
+    _init_groq_clients()
+    return [
+        (_groq1, GROQ_LIGHT, "Key1/Light"),
+        (_groq2, GROQ_LIGHT, "Key2/Light"),
+        (_groq3, GROQ_LIGHT, "Key3/Light"),
+        (_groq4, GROQ_LIGHT, "Key4/Light"),
     ]
 
 
@@ -183,13 +193,23 @@ def _groq_call(client, model, messages, max_tokens, temperature):
     if client is None:
         return None
     try:
-        r = client.chat.completions.create(
+        kwargs = dict(
             model=model,
             messages=messages,
             max_tokens=max_tokens,
             temperature=temperature,
         )
-        return r.choices[0].message.content.strip()
+        # gpt-oss reasoning models can burn the whole max_tokens budget on
+        # "thinking" and return empty content if reasoning_effort isn't capped.
+        if model.startswith("openai/gpt-oss"):
+            kwargs["reasoning_effort"] = "low"
+
+        r = client.chat.completions.create(**kwargs)
+        content = r.choices[0].message.content
+        if not content or not content.strip():
+            print(f"[GROQ] {model} returned EMPTY content (finish_reason={r.choices[0].finish_reason})")
+            return None
+        return content.strip()
     except Exception as e:
         print(f"[GROQ] {model} failed: {e}")
         return None
@@ -210,7 +230,7 @@ def groq_call(messages, max_tokens=500, temperature=0.3) -> str:
                 f"{m['role'].upper()}: {m['content']}" for m in messages
             )
             r = _gemini_client.models.generate_content(
-                model="gemini-2.5-flash",
+                model="gemini-3.6-flash",
                 contents=prompt_text,
                 config=genai_types.GenerateContentConfig(
                     max_output_tokens=max_tokens,
@@ -224,6 +244,22 @@ def groq_call(messages, max_tokens=500, temperature=0.3) -> str:
 
     print("[LLM] ❌ All attempts failed")
     return ""
+
+
+def groq_call_light(messages, max_tokens=5, temperature=0.0) -> str:
+    """
+    Fast path for simple classification tasks (e.g. YES/NO scope check).
+    Uses a non-reasoning model, so no reasoning_effort/token-burn issue —
+    small max_tokens is safe here.
+    """
+    for client, model, label in _get_groq_light_attempts():
+        result = _groq_call(client, model, messages, max_tokens, temperature)
+        if result:
+            print(f"[LLM] ✅ {label}")
+            return result
+
+    # Fall back to the regular (reasoning) models + Gemini if light model fails
+    return groq_call(messages, max_tokens=30, temperature=temperature)
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -382,28 +418,20 @@ def is_out_of_scope(question: str) -> bool:
     )
     user_msg = f"Question: {question}\nAnswer YES or NO only."
 
-    result = groq_call(
+    result = groq_call_light(
         messages=[
             {"role": "system", "content": system},
             {"role": "user",   "content": user_msg},
         ],
-        max_tokens=30,
+        max_tokens=5,
         temperature=0.0,
     )
 
-    if '<think>' in result.lower():
-        lines = [l.strip() for l in result.strip().splitlines() if l.strip()]
-        result_clean = lines[-1] if lines else result
-    else:
-        result_clean = result.strip()
-
-    # ✅ YE LINE ADD KARO — bilkul yahan
-    is_oos = "YES" not in result_clean.upper()
-
+    is_oos = "YES" not in result.upper()
     _scope_cache[q] = is_oos
 
     label = "OUT OF SCOPE" if is_oos else "IN SCOPE"
-    print(f"[SCOPE] LLM says {label}: '{question}' → '{result_clean}'")
+    print(f"[SCOPE] LLM says {label}: '{question}' → '{result}'")
     return is_oos
 
 
