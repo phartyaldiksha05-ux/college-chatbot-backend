@@ -387,7 +387,7 @@ def is_out_of_scope(question: str) -> bool:
             {"role": "system", "content": system},
             {"role": "user",   "content": user_msg},
         ],
-        max_tokens=5,
+        max_tokens=30,
         temperature=0.0,
     )
 
