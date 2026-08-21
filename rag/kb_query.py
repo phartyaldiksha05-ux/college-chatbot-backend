@@ -66,7 +66,7 @@ def _init_groq_clients():
 
 GROQ_PRIMARY  = "openai/gpt-oss-120b"
 GROQ_FALLBACK = "openai/gpt-oss-20b"
-GROQ_LIGHT    = "llama-3.1-8b-instant"   # fast, non-reasoning — for simple YES/NO classification
+GROQ_LIGHT    = "openai/gpt-oss-20b"     # fast — for simple YES/NO classification
 
 def _get_groq_attempts():
     """Attempts list dynamically banao taaki lazy init kaam kare."""
@@ -201,8 +201,10 @@ def _groq_call(client, model, messages, max_tokens, temperature):
         )
         # gpt-oss reasoning models can burn the whole max_tokens budget on
         # "thinking" and return empty content if reasoning_effort isn't capped.
+        # Sent via extra_body so it works even on older `groq` SDK versions
+        # that don't have reasoning_effort as a typed parameter yet.
         if model.startswith("openai/gpt-oss"):
-            kwargs["reasoning_effort"] = "low"
+            kwargs["extra_body"] = {"reasoning_effort": "low"}
 
         r = client.chat.completions.create(**kwargs)
         content = r.choices[0].message.content
@@ -238,7 +240,12 @@ def groq_call(messages, max_tokens=500, temperature=0.3) -> str:
                 ),
             )
             print("[LLM] ✅ Gemini fallback")
-            return r.text.strip()
+            text = r.text
+            if not text or not text.strip():
+                print("[LLM] Gemini returned empty/blocked response")
+                print("[LLM] ❌ All attempts failed")
+                return ""
+            return text.strip()
         except Exception as e:
             print(f"[LLM] Gemini also failed: {e}")
 
@@ -246,7 +253,7 @@ def groq_call(messages, max_tokens=500, temperature=0.3) -> str:
     return ""
 
 
-def groq_call_light(messages, max_tokens=5, temperature=0.0) -> str:
+def groq_call_light(messages, max_tokens=20, temperature=0.0) -> str:
     """
     Fast path for simple classification tasks (e.g. YES/NO scope check).
     Uses a non-reasoning model, so no reasoning_effort/token-burn issue —
@@ -423,7 +430,7 @@ def is_out_of_scope(question: str) -> bool:
             {"role": "system", "content": system},
             {"role": "user",   "content": user_msg},
         ],
-        max_tokens=5,
+        max_tokens=20,
         temperature=0.0,
     )
 
