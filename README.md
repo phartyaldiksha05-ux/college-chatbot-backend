@@ -4,9 +4,9 @@ title: Diksha - AI-Powered Multilingual College Chatbot Backend
 emoji: 🤖
 colorFrom: blue
 colorTo: indigo
-sdk: docker
+sdk:docker
 pinned: false
--------------
+----
 
 # 🤖 Diksha - AI-Powered Multilingual College Chatbot
 
