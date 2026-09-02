@@ -1,6 +1,6 @@
 ---
 
-title: Diksha — AI-Powered Multilingual College Chatbot Backend
+title: Diksha - AI-Powered Multilingual College Chatbot Backend
 emoji: 🤖
 colorFrom: blue
 colorTo: indigo
@@ -8,7 +8,7 @@ sdk: docker
 pinned: false
 -------------
 
-# 🤖 Diksha — AI-Powered Multilingual College Chatbot
+# 🤖 Diksha - AI-Powered Multilingual College Chatbot
 
 > An AI-powered multilingual college assistant for **GBPIET, Pauri Garhwal**, designed to answer student queries using a hybrid Retrieval-Augmented Generation (RAG) pipeline.
 
